@@ -62,8 +62,8 @@ void popcon::GEMEMapSourceHandler::getNewObjects()
   std::string baseCMS = std::string(getenv("CMSSW_BASE"))+std::string("/src/myCondTools/GEM/data/");  
   std::vector<std::string> mapfiles;
 
-  mapfiles.push_back("chamberMapTestBeam.csv");
-  mapfiles.push_back("stripChannelMap.csv");
+  mapfiles.push_back("chamberMapME0stack.csv");
+  mapfiles.push_back("stripChannelMapME0stack.csv");
   // Chamber Map 
   GEMeMap::GEMChamberMap cMap;
   std::string field, line;
@@ -132,7 +132,7 @@ void popcon::GEMEMapSourceHandler::getNewObjects()
     std::stringstream STRIP(field);
     CHAMBERTYPE >> chamberType_; VFAT >> vfat_; VFATCH >> vfatCh_; IETA >> iEta_; STRIP >> strip_; 
     
-    //std::cout << "chamberType: " << chamberType_ << ", vfat:" << vfat_ << ", vfatChannel:" << vfatCh_ << ", iEta:" << iEta_ << ", strip: " << strip_ << std::endl;  
+    std::cout << "chamberType: " << chamberType_ << ", vfat:" << vfat_ << ", vfatChannel:" << vfatCh_ << ", iEta:" << iEta_ << ", strip: " << strip_ << std::endl;  
 
     chStMap.chamberType.push_back(chamberType_);
     chStMap.vfatAdd.push_back(vfat_);
